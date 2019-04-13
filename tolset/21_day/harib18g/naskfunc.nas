@@ -262,7 +262,7 @@ end_app:
 		POPAD
 		RET					; 返回cmd_app
 
-_start_app:		; void start_app(int eip, int cs, int esp, int ds);
+_start_app:		; void start_app(int eip, int cs, int esp, int ds, int *tss_esp0);
 		PUSHAD		; 将32位寄存器的值全部保存起来
 		MOV		EAX,[ESP+36]	; 应用程序用EIP
 		MOV		ECX,[ESP+40]	; 应用程序用CS
